@@ -1,0 +1,19 @@
+<templateSet group="Laravel-Blade-Package-Specific">
+  <template name="@spaceless" value="@spaceless&#10;$END$&#10;@endspaceless" description="Blade - @spaceless (slydeath/laravel5-blade-spaceless)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="@group" value="@group ('$GROUP$')&#10;    $END$&#10;@endgroup" description="Blade - @group (httpoz\roles)" toReformat="false" toShortenFQNames="true">
+    <variable name="GROUP" expression="" defaultValue="&quot;group&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="@role" value="@role ('$ROLE$')&#10;    $END$&#10;@endrole" description="Blade - @role (httpoz\roles)" toReformat="false" toShortenFQNames="true">
+    <variable name="ROLE" expression="" defaultValue="&quot;role&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+</templateSet>
