@@ -23,7 +23,7 @@ You should still press `Cmd + J` to filter out everything else (classes, variabl
 
 1) Blade
 
-Please note that each Blade template require `@` sign before. 
+> Please note that each Blade template require `@` sign before. 
 
 name="@asset"
 value="{{ asset('$ASSET_PATH$') }}$END$"
@@ -167,19 +167,19 @@ description="Blade - route()"
 
 
 ## Master plan
-[ ] Rework all the templates in [koomai/phpstorm-laravel-live-templates](https://github.com/koomai/phpstorm-laravel-live-templates)
-- [ ] Annotations
-- [x] Blade
-- [ ] Input
-- [ ] Request
-- [ ] Cookie
-- [ ] Route
-- [ ] View
-- [ ] Response
-- [ ] Redirect
-- [ ] Schema
-- [ ] Cache
-- [ ] Form
-- [ ] Session
-- [ ] Helpers
-[ ] Rework the documentation
+- [ ] Rework all the templates in [koomai/phpstorm-laravel-live-templates](https://github.com/koomai/phpstorm-laravel-live-templates)
+ - [ ] Annotations
+ - [x] Blade
+ - [ ] Input
+ - [ ] Request
+ - [ ] Cookie
+ - [ ] Route
+ - [ ] View
+ - [ ] Response
+ - [ ] Redirect
+ - [ ] Schema
+ - [ ] Cache
+ - [ ] Form
+ - [ ] Session
+ - [ ] Helpers
+- [ ] Rework the documentation
