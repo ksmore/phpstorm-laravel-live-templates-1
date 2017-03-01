@@ -16,4 +16,22 @@
       <option name="OTHER" value="true" />
     </context>
   </template>
+  <template name="@SEO::generate" value="{!! SEO::generate(true) !!}&#10;&#10;$END$" description="Generate minified SEO metas (artesaos/seotools)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Bash" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PHP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="Twig" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
 </templateSet>
