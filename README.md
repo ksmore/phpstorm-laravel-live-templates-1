@@ -166,6 +166,24 @@ value="{{ route('$NAME$') }}$END$"
 description="Blade - route()"
 
 
+2) Package Specific
+
+> This group contains all templates maded for specific packages. This is an optional package. 
+> This is a templates for my packages of choice. If you have your own stack of packages, please make templates by yourself.
+
+name="@spaceless"
+@spaceless&#10;$END$&#10;@endspaceless"
+Blade - @spaceless [slydeath/laravel5-blade-spaceless](https://github.com/SlyDeath/laravel5-blade-spaceless)"
+
+name="@group"
+@group ('$GROUP$')&#10;    $END$&#10;@endgroup"
+Blade - @group [httpoz\roles](https://github.com/httpoz/roles)"
+
+name="@role"
+@role ('$ROLE$')&#10;    $END$&#10;@endrole"
+Blade - @role [httpoz\roles](https://github.com/httpoz/roles)"
+
+
 ## Master plan
 - [ ] Rework all the templates in [koomai/phpstorm-laravel-live-templates](https://github.com/koomai/phpstorm-laravel-live-templates)
  - [ ] Annotations
