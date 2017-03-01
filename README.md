@@ -182,3 +182,4 @@ description="Blade - route()"
 - [ ] Form
 - [ ] Session
 - [ ] Helpers
+[ ] Rework the documentation
