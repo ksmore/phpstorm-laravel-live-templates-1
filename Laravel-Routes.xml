@@ -1,0 +1,126 @@
+<templateSet group="Laravel-Routes">
+  <template name="Route::" value="Route::$VERB$('$NAME$', function()&#10;{&#10;    $END$&#10;});" description="Basic Route with Closure (with verbs)" toReformat="true" toShortenFQNames="true">
+    <variable name="VERB" expression="enum(&quot;get&quot;, &quot;post&quot;, &quot;put&quot;, &quot;patch&quot;, &quot;delete&quot;, &quot;options&quot;, &quot;any&quot;)" defaultValue="&quot;get&quot;" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="&quot;/&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Route::match" value="Route::match(['$VERB1$', '$VERB2$'], '$ROUTE$', function()&#10;{&#10;    $END$&#10;});" description="Registering A Route For Multiple Verbs" toReformat="false" toShortenFQNames="true">
+    <variable name="VERB1" expression="enum(&quot;get&quot;, &quot;post&quot;, &quot;put&quot;, &quot;patch&quot;, &quot;delete&quot;, &quot;options&quot;, &quot;any&quot;)" defaultValue="&quot;get&quot;" alwaysStopAt="true" />
+    <variable name="VERB2" expression="enum(&quot;get&quot;, &quot;post&quot;, &quot;put&quot;, &quot;patch&quot;, &quot;delete&quot;, &quot;options&quot;, &quot;any&quot;)" defaultValue="&quot;post&quot;" alwaysStopAt="true" />
+    <variable name="ROUTE" expression="" defaultValue="&quot;/&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Route::pattern" value="Route::pattern('$NAME$', '$PATTERN$');" description="Define Global Patterns (Regex)" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;id&quot;" alwaysStopAt="true" />
+    <variable name="PATTERN" expression="" defaultValue="&quot;[0-9]+&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Route::group" value="Route::group([$FILTER$], function()&#10;{&#10;    $END$&#10;});" description="Create a Group of Routes" toReformat="true" toShortenFQNames="true">
+    <variable name="FILTER" expression="" defaultValue="&quot;'prefix' =&gt; 'admin'&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@get" value="@$VERB$(&quot;$PATH$&quot;$OPTIONS$)$END$" description="Annotation - Basic Route (@Get, @Post,...)" toReformat="false" toShortenFQNames="true">
+    <variable name="VERB" expression="enum(&quot;Get&quot;, &quot;Post&quot;, &quot;Put&quot;, &quot;Patch&quot;,&quot;Delete&quot;)" defaultValue="&quot;Get&quot;" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="&quot;/&quot;" alwaysStopAt="true" />
+    <variable name="OPTIONS" expression="" defaultValue="&quot;, as=\&quot;route.name\&quot;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@where" value="@Where({$CONDITION$})$END$" description="Annotation - Route Constraints" toReformat="false" toShortenFQNames="true">
+    <variable name="CONDITION" expression="" defaultValue="&quot;\&quot;id\&quot;: \&quot;[0-9]+\&quot;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@getWhere" value="@$VERB$(&quot;$PATH$&quot;$OPTIONS$)&#10;* @Where({$CONDITION$})$END$" description="Annotation - Basic Route with Constraints" toReformat="false" toShortenFQNames="true">
+    <variable name="VERB" expression="enum(&quot;Get&quot;, &quot;Post&quot;, &quot;Put&quot;, &quot;Patch&quot;,&quot;Delete&quot;)" defaultValue="&quot;Get&quot;" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="&quot;/{id}&quot;" alwaysStopAt="true" />
+    <variable name="OPTIONS" expression="" defaultValue="&quot;, as=\&quot;route.name\&quot;&quot;" alwaysStopAt="true" />
+    <variable name="CONDITION" expression="" defaultValue="&quot;\&quot;id\&quot;: \&quot;[0-9]+\&quot;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@hears" value="@Hears(&quot;$EVENT$&quot;)$END$" description="Annotation - Event" toReformat="false" toShortenFQNames="true">
+    <variable name="EVENT" expression="" defaultValue="&quot;user.login&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@middleware" value="@Middleware(&quot;$NAME$&quot;, $OPTION$={&quot;$ACTION$&quot;})" description="Annotation - Middleware" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;FooMiddleware&quot;" alwaysStopAt="true" />
+    <variable name="OPTION" expression="enum(&quot;only&quot;,&quot;except&quot;)" defaultValue="&quot;only&quot;" alwaysStopAt="true" />
+    <variable name="ACTION" expression="" defaultValue="&quot;update&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@resource" value="@Resource(&quot;$NAME$&quot;, $OPTION$={&quot;$CONSTRAINTS$&quot;})" description="Annotation - Resource" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;users&quot;" alwaysStopAt="true" />
+    <variable name="OPTION" expression="enum(&quot;only&quot;,&quot;except&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="CONSTRAINTS" expression="" defaultValue="&quot;update&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@controller" value="@Controller(&quot;$OPTION$&quot;)$END$" description="Annotation - Controller" toReformat="false" toShortenFQNames="true">
+    <variable name="OPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="route" value="$$$URL$ = route('$ROUTE$');$END$" description="Helper - Generate URLs" toReformat="false" toShortenFQNames="true">
+    <variable name="URL" expression="" defaultValue="&quot;url&quot;" alwaysStopAt="true" />
+    <variable name="ROUTE" expression="" defaultValue="&quot;profile&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Route::model" value="Route::model('$NAME$', $CONTROLLER$);$END$" description="Route to a model" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;users&quot;" alwaysStopAt="true" />
+    <variable name="CONTROLLER" expression="" defaultValue="&quot;App\User::class&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Route::bind" value="Route::bind('$NAME$', function($VALUE$)&#10;{&#10;   $END$ &#10;});" description="Use your own resolution logic" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Route::current" value="$route = Route::current();$END$" description="Route to Current" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Route::currentRouteName" value="$name = Route::currentRouteName();$END$" description="Current Route name" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Route::currentRouteAction" value="$action = Route::currentRouteAction();$END$" description="Current Route action" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JSP" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>
